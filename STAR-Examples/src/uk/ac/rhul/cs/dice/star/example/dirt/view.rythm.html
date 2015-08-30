@@ -1,0 +1,85 @@
+@args Map resources
+
+<link href="/@resources.get("bootstrapCss")" rel="stylesheet" media="screen">
+
+ <link href="/@resources.get("stylesCss")" rel="stylesheet" />
+    <link href="" rel="stylesheet" />
+  <link href="/@resources.get("dashboardCss")" rel="stylesheet">
+
+    
+    <div id="content">
+    	<div id="left-column" class="column">
+			<ul class="tabs-menu">
+				<li class="tab-control active-tab-control" tab="environment-tab">
+					<div title="Environment"><img src="/@resources.get("globePng")"/></div>
+				</li>
+				<li class="tab-control" tab="user-tab">
+					<div title="User"><img src="/@resources.get("userPng")"/></div>
+				</li>
+				<li>
+					<div title="Agents"><img src="/@resources.get("robot2Png")"/></div>
+					<ul id="agents-tab-controls">
+					</ul>
+				</li>
+				<li>
+					<div title="Objects"><img src="/@resources.get("kettlePng")"/></div>
+					<ul id="objects-tab-controls">
+					</ul>
+				</li>
+			</ul>
+			<div id="tabs">
+				
+				<div id="environment-tab" class="tab active-tab">
+					<h3>Environment</h3>
+					
+					<div id="environment-parameters" class="parameters"></div>
+				</div>
+				
+				<div id="user-tab" class="tab">
+					<div id="user-parameters" class="parameters"></div>
+				</div>
+			</div>
+    	</div>
+    	<div id="right-column" class="column">
+    		<div id="canvas-container"></div>
+    	</div>
+    </div>
+    
+  
+ <script>
+//////////////Entity Types DATA STRUCTURE /////////////
+ window.entityTypes = 
+ {
+ 	agent: 
+ 	{
+ 		typeName: "agent",
+ 		kind: "agent",
+ 		cssClass: "grid-element agent-element",
+ 		images: ["/@resources.get("robot0Png")", "/@resources.get("robot1Png")", "/@resources.get("robot2Png")", "/@resources.get("robot3Png")"],
+ 		guiIcon: "/@resources.get("robotIconPng")"
+ 	},
+ 	dirt: 
+ 	{
+ 		typeName: "dirt",
+ 		kind: "object",
+ 		cssClass: "grid-element dirt-element",
+ 		images: ["@resources.get("dirt2Png")"],
+ 		guiIcon: "@resources.get("agentPng")"
+ 	},
+ 	user:
+ 	{
+ 		typeName: "user",
+ 		kind: "avatar",
+ 		cssClass: "grid-element user-element",
+ 		images: ["@resources.get("user1Png")"],
+ 		guiIcon: "@resources.get("agentPng")"
+ 	}
+ }
+ </script>
+    <!-- Grid Preset -->
+    <script src="/@resources.get("jqueryJs")"></script>
+    <script src="/@resources.get("scriptsJs")"></script>
+     <script src="/@resources.get("utilJs")"></script>
+    <script src="/@resources.get("clientGolemSupportJs")"></script>
+    <script src="/@resources.get("layoutScriptsJs")"></script>
+</html>

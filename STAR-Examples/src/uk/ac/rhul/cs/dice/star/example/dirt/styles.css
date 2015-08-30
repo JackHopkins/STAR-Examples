@@ -1,0 +1,259 @@
+/***** Body *****/
+body {
+	font-family: "Helvetica Neue", sans-serif;
+	font-size: 14px;
+	background-color: rgb(255, 255, 255);
+	font-weight: 300;
+	font-size: 12px;
+	letter-spacing: 0.09em;
+	color: rgb(120, 120, 120);
+	/*overflow:hidden;*/
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+ul, li, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/***** STRUCTURE ******/
+
+#content {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+#header {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 40px;
+	background-color: rgb(60, 60, 60);
+	color: rgb(230, 230, 230);
+	font-weight: 300;
+	font-size: 14px;
+	
+	background: #666666; /* Old browsers */
+	background: -moz-linear-gradient(top,  #666666 0%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #666666 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #666666 0%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #666666 0%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #666666 0%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+#header p {
+	padding: 10px;
+	margin: 0px;
+}
+
+.column {
+	display: block;
+	height: auto;
+	display: table-cell;
+}
+
+#left-column {
+	background-color: rgb(245, 245, 245);
+	width: 300px;
+}
+
+#right-column {
+	background-color: #9BAAB5;
+	width: auto;
+	vertical-align: middle;
+	border-left: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+/***** TABS *****/
+.tab{
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.active-tab{
+	display: block;
+}
+
+#tabs{
+	display: block;
+	position: relative;
+	float: left;
+	margin: 15px;
+}
+
+/***** MENU *****/
+
+.tabs-menu  {
+	z-index: 10;
+	display: block;
+	float: left;
+	width: 45px;
+	height: 100%;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+	background-color: rgb(100, 100, 100);
+	
+	background: #646464; /* Old browsers */
+	background: -moz-linear-gradient(left,  #646464 0%, #646464 70%, #444444 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#646464), color-stop(70%,#646464), color-stop(100%,#444444)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #646464 0%,#646464 70%,#444444 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #646464 0%,#646464 70%,#444444 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #646464 0%,#646464 70%,#444444 100%); /* IE10+ */
+	background: linear-gradient(to right,  #646464 0%,#646464 70%,#444444 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#646464', endColorstr='#444444',GradientType=1 ); /* IE6-9 */
+
+
+}
+
+.active-tab-control {
+	background: rgb(100, 120, 150);
+}
+
+.tabs-menu > li > ul > .active-tab-control {
+	background: #A7BECE;
+}
+
+.tabs-menu li {
+	cursor: pointer;
+}
+
+.tabs-menu li > div {
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+}
+
+.tabs-menu li:hover > div{
+	color: rgb(255, 255, 255);
+}
+
+.tabs-menu > li {
+	display: block;
+	width: 100%;
+	height: 45px;
+	margin: 0px;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.tabs-menu > li > div {
+	width: 100%;
+	height: 35px;
+	padding-top: 10px;
+}
+
+.tabs-menu > li > ul {
+	display: none;
+	position: relative;
+	top: -51px;
+	left: 45px;
+	
+	-webkit-box-shadow: 3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow:    3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+	box-shadow:         3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+}
+
+.tabs-menu li:hover {
+	background-color: rgb(160, 160, 160) !important;
+}
+
+.tabs-menu > li:hover > ul {
+	display: table;
+	margin-top: 6px;
+}
+
+.tabs-menu > li > ul{
+	background-color: rgb(190, 190, 190);
+}
+
+.tabs-menu > li > ul > li {
+	display: block;
+	margin: 0px;
+	vertical-align: middle;
+	text-align: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	height: 25px;
+	width: 200px;
+	padding-top: 9px;
+}
+
+.tabs-menu > li > ul > li:hover {
+	background-color: rgb(210, 210, 210);
+}
+
+
+
+
+
+/***** GRID ******/
+
+.grid-canvas {
+	display: table;
+	table-layout: fixed;
+	background-color: rgb(255, 255, 255);
+	width: 500px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid rgba(0, 0, 0, 0.45);
+	
+	-webkit-box-shadow: 3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+	-moz-box-shadow:    3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+	box-shadow:         3px 3px 18px 0px rgba(50, 50, 50, 0.41);
+}
+
+.grid-row {
+	display: table-row;
+	table-layout: fixed;
+}
+
+.grid-cell {
+	table-layout: fixed;
+	display: table-cell;
+	border: 1px solid rgba(0, 0, 0, 0.04);
+	border-top: 0px;
+	border-left: 0px;
+	position: relative;
+}
+
+
+/***** GRID ELEMENTS *****/
+.grid-element {
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+}
+
+.grid-element img{
+}
+
+.selected-entity {
+	background: #A7BECE;
+}
+
+.user-element {
+	z-index: 100;
+}
+
+/***** Parameters *****/
+.event-list {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 210px;
+	height: 150px;
+	overflow: auto;
+}
