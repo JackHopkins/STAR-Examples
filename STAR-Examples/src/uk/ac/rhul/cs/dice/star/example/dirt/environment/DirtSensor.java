@@ -1,4 +1,4 @@
-package uk.ac.rhul.cs.dice.star.example.dirt;
+package uk.ac.rhul.cs.dice.star.example.dirt.environment;
 
 import uk.ac.rhul.cs.dice.star.action.AbstractSensor;
 import uk.ac.rhul.cs.dice.star.action.Action;

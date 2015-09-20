@@ -1,5 +1,6 @@
 //serverUrl = "http://localhost:8080/WebAppRunner/CleaningRobot";
-serverUrl = "../CleaningRobot";
+serverUrl = window.location;
+
 //serverUrl = "fake_server.html";
 
 function Golem() {};
@@ -18,7 +19,33 @@ Golem.getEvents = function(callback)
 //Add entity
 Golem.addEntity = function(typeName, params, callback)
 {
+	if (typeName == "dirt") {
 	Golem.request("add" + typeName, params, callback);
+	}else{
+		var url = window.location.href.replace("//", "/");
+		url = url.split("/");
+		var container = url[url.length-2];
+
+		$.get(
+		        serverUrl+"?task=addagent?" + params
+		    ).done(function(response){
+		    	$.post(
+				        './'+'sweep'+'?'+params, 
+				        callback
+				    ).done(function(response){
+				    	
+				    	$.get(
+				        './'+response+'?'+params
+				        );
+				        
+				    }).fail(function(response) {
+					alert('Could not create agent through the STAR API. This functionality is not support in development mode using the STAR SDK.')
+					});
+		    	
+		    });
+		
+		
+	}	
 }
 
 //Move User

@@ -1,28 +1,28 @@
 @args Map resources
 
-<link href="/@resources.get("bootstrapCss")" rel="stylesheet" media="screen">
+<link href="@resources.get("bootstrapCss")" rel="stylesheet" media="screen">
 
- <link href="/@resources.get("stylesCss")" rel="stylesheet" />
+ <link href="@resources.get("stylesCss")" rel="stylesheet" />
     <link href="" rel="stylesheet" />
-  <link href="/@resources.get("dashboardCss")" rel="stylesheet">
+  <link href="@resources.get("dashboardCss")" rel="stylesheet">
 
     
     <div id="content">
     	<div id="left-column" class="column">
 			<ul class="tabs-menu">
 				<li class="tab-control active-tab-control" tab="environment-tab">
-					<div title="Environment"><img src="/@resources.get("globePng")"/></div>
+					<div title="Environment"><img src="@resources.get("globePng")"/></div>
 				</li>
 				<li class="tab-control" tab="user-tab">
-					<div title="User"><img src="/@resources.get("userPng")"/></div>
+					<div title="User"><img src="@resources.get("userPng")"/></div>
 				</li>
 				<li>
-					<div title="Agents"><img src="/@resources.get("robot2Png")"/></div>
+					<div title="Agents"><img src="@resources.get("robot2Png")"/></div>
 					<ul id="agents-tab-controls">
 					</ul>
 				</li>
 				<li>
-					<div title="Objects"><img src="/@resources.get("kettlePng")"/></div>
+					<div title="Objects"><img src="@resources.get("kettlePng")"/></div>
 					<ul id="objects-tab-controls">
 					</ul>
 				</li>
@@ -55,8 +55,8 @@
  		typeName: "agent",
  		kind: "agent",
  		cssClass: "grid-element agent-element",
- 		images: ["/@resources.get("robot0Png")", "/@resources.get("robot1Png")", "/@resources.get("robot2Png")", "/@resources.get("robot3Png")"],
- 		guiIcon: "/@resources.get("robotIconPng")"
+ 		images: ["@resources.get("robot0Png")", "@resources.get("robot1Png")", "@resources.get("robot2Png")", "@resources.get("robot3Png")"],
+ 		guiIcon: "@resources.get("robotIconPng")"
  	},
  	dirt: 
  	{
@@ -77,9 +77,9 @@
  }
  </script>
     <!-- Grid Preset -->
-    <script src="/@resources.get("jqueryJs")"></script>
-    <script src="/@resources.get("scriptsJs")"></script>
-     <script src="/@resources.get("utilJs")"></script>
-    <script src="/@resources.get("clientGolemSupportJs")"></script>
-    <script src="/@resources.get("layoutScriptsJs")"></script>
+    <script src="@resources.get("jqueryJs")"></script>
+    <script src="@resources.get("scriptsJs")"></script>
+     <script src="@resources.get("utilJs")"></script>
+    <script src="@resources.get("clientGolemSupportJs")"></script>
+    <script src="@resources.get("layoutScriptsJs")"></script>
 </html>

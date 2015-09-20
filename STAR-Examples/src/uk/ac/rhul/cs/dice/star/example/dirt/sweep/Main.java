@@ -1,4 +1,4 @@
-package uk.ac.rhul.cs.dice.star.example.dirt.environment;
+package uk.ac.rhul.cs.dice.star.example.dirt.sweep;
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -6,9 +6,11 @@ import java.util.Map;
 import java.util.Set;
 
 
+
 //import models.GolemPlatform;
 import uk.ac.rhul.cs.dice.star.agent.AbstractAgentBody;
 import uk.ac.rhul.cs.dice.star.agent.AgentFactory;
+import uk.ac.rhul.cs.dice.star.agent.DefaultAgentBody;
 import uk.ac.rhul.cs.dice.star.agent.DefaultAgentBrain;
 import uk.ac.rhul.cs.dice.star.container.AbstractContainer;
 import uk.ac.rhul.cs.dice.star.entity.View;
@@ -25,15 +27,15 @@ public class Main {
 		String container = "welcome";
 		String agent = "tutorial-agent";
 
-		File parentDirectory = new File(ClassLoader.getSystemResource("uk/ac/rhul/cs/dice/star/example/dirt/environment").getFile());
+		File parentDirectory = new File(ClassLoader.getSystemResource("uk/ac/rhul/cs/dice/star/example/dirt/sweep").getFile());
 		DummyServer dummyServer = new DummyServer(parentDirectory);
 		
-		Map<String, Resource> resources = DummyResourceFinder.findResources(parentDirectory, "uk.ac.rhul.cs.dice.star.example.dirt.environment");//new HashMap<String, Resource>();
-		Map<String, View> views = DummyViewFinder.findViews(parentDirectory, "uk.ac.rhul.cs.dice.star.example.dirt.environment");
+		//Map<String, Resource> resources = DummyResourceFinder.findResources(parentDirectory, "uk.ac.rhul.cs.dice.star.example.dirt.environment");//new HashMap<String, Resource>();
+		//Map<String, View> views = DummyViewFinder.findViews(parentDirectory, "uk.ac.rhul.cs.dice.star.example.dirt.environment");
 		
-		System.out.println("Resources #: "+resources.size()+", Views #: "+views.size());
-		System.out.println("Resources: "+resources.keySet().toString());
-		System.out.println("Views: "+views.keySet().toString());
+		//System.out.println("Resources #: "+resources.size()+", Views #: "+views.size());
+		//System.out.println("Resources: "+resources.keySet().toString());
+		//System.out.println("Views: "+views.keySet().toString());
 		
 		DummyPlatform platform = DummyPlatform.getInstance();
 		
@@ -43,19 +45,19 @@ public class Main {
 		
 		try {
 		Set<Class<?>> effectors = new HashSet<Class<?>>();
-		effectors.add(DirtEffector.class);
+		effectors.add(CleanEffector.class);
 		Set<Class<?>> sensors = new HashSet<Class<?>>();
-		sensors.add(DirtSensor.class);
+		sensors.add(CleanSensor.class);
 		
 		AbstractAgentBody body = AgentFactory.initAgent(
 				agent,
 				DefaultAgentBrain.class,
-				DirtAgentMind.class,
-				DirtAgentBody.class,
+				CleaningAgentJavaSweep.class,
+				DefaultAgentBody.class,
 				effectors,
 				sensors,
 				containerObj);
-		body.setRenderer(views, resources);
+		//body.setRenderer(views, resources);
 		
 		containerObj.makePresent(body);
 		System.out.println("Added agent to \""+container+"\"");

@@ -1,7 +1,7 @@
 debug = true;
 grid = undefined;
 loopEvery = 200;
-getEventsEvery = 2000;
+getEventsEvery = 300;
 guiInitialised = false;
 
 
@@ -371,7 +371,8 @@ Grid.prototype = {
 		
 		// Init Server
 		Golem.initServer("width=" + this.width + "&height=" + this.height + "&agents=" + agentPositions + "&dirt=" + dirtPositions,
-            function(){grid.serverInitialised = true;}
+            function(){
+			grid.serverInitialised = true;}
         );
 	},
 	
@@ -459,11 +460,10 @@ Grid.prototype = {
 		if(orientation == undefined) orientation = 0;
 		entity = new GridEntity(this, entityId, entityName, entityType, px, py, orientation);
 		this.entities.push(entity);
-		
 		//if the server hasn't been initialised, the entities positions will be sent in the init url
 		if(this.serverInitialised)
 		{
-			Golem.addEntity(entityType.typeName, "id="+entityId+"&x="+px+"&y="+py, 
+			Golem.addEntity(entityType.typeName, "id="+entityId+"&x="+px+"&y="+py+"&direction=EAST", 
 				function(responseText){
 				}
 			);
@@ -588,13 +588,13 @@ function setupGUI()
 ///////// TEMP GRID INIT ////////
 $( document ).ready(function() {
 	grid = new Grid("canvas-container", 20, 20);
-	grid.addEntity("ag0", "Agent 0", window.entityTypes.agent, 0, 6, 0);
+	grid.initServer();
+	/*grid.addEntity("ag0", "Agent 0", window.entityTypes.agent, 0, 6, 0);
 	grid.addEntity("ag1", "Agent 1", window.entityTypes.agent, 5, 7, 0);
 	grid.addEntity("dirt0", "Dirt 0", window.entityTypes.dirt, 0, 1);
 	grid.addEntity("dirt1", "Dirt 1", window.entityTypes.dirt, 12, 3);
 	grid.addEntity("dirt2", "Dirt 2", window.entityTypes.dirt, 18, 2);
-	grid.addEntity("dirt3", "Dirt 3", window.entityTypes.dirt, 10, 16);
-	grid.initServer();
+	grid.addEntity("dirt3", "Dirt 3", window.entityTypes.dirt, 10, 16);*/
 });
 
 

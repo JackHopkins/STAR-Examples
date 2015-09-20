@@ -1,4 +1,4 @@
-package uk.ac.rhul.cs.dice.star.example.dirt;
+package uk.ac.rhul.cs.dice.star.example.dirt.environment;
 
 import java.util.concurrent.ConcurrentHashMap;
 
